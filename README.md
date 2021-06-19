@@ -1,5 +1,8 @@
 # Instagram UI Clone App Flutter
 
+<img src="img-readme.png" alt="dart" width="967" height="550">
+
+<img src="gif-readme.gif" alt="dart" width="967" height="550">
 
 ## Description
 
