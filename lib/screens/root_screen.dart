@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagramui/screens/home_screen.dart';
+import 'package:instagramui/screens/search_screen.dart';
 import 'package:instagramui/theme/colors.dart';
 
 class RootApp extends StatefulWidget {
@@ -23,59 +24,64 @@ class _RootAppState extends State<RootApp> {
   }
 
   Widget getAppBar() {
-    return AppBar(
-      backgroundColor: white,
-      shadowColor: Colors.grey.withOpacity(0.2),
-      title: Text(
-        "Instagram",
-        style: TextStyle(
-          fontFamily: 'Billabong',
-          color: black,
-          fontSize: 35,
+    if(screenIndex == 0) {
+      return AppBar(
+        backgroundColor: white,
+        shadowColor: Colors.grey.withOpacity(0.2),
+        title: Text(
+          "Instagram",
+          style: TextStyle(
+            fontFamily: 'Billabong',
+            color: black,
+            fontSize: 35,
+          ),
         ),
-      ),
-      actions: [
-        IconButton(
-          onPressed: null,
-          icon: Container(
-            width: 27,
-            height: 27,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/images/upload.png"),
-                fit: BoxFit.cover,
+        actions: [
+          IconButton(
+            onPressed: null,
+            icon: Container(
+              width: 27,
+              height: 27,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/images/upload.png"),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
-        ),
-        IconButton(
-          onPressed: null,
-          icon: Container(
-            width: 27,
-            height: 27,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/images/love.png"),
-                fit: BoxFit.cover,
+          IconButton(
+            onPressed: null,
+            icon: Container(
+              width: 27,
+              height: 27,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/images/love.png"),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
-        ),
-        IconButton(
-          onPressed: null,
-          icon: Container(
-            width: 27,
-            height: 27,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/images/chat.png"),
-                fit: BoxFit.cover,
+          IconButton(
+            onPressed: null,
+            icon: Container(
+              width: 27,
+              height: 27,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage("assets/images/chat.png"),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           ),
-        ),
-      ],
-    );
+        ],
+      );
+    } else {
+      return null;
+    }
+    
   }
 
   Widget getBottomNavigationBar() {
@@ -130,7 +136,7 @@ class _RootAppState extends State<RootApp> {
   Widget getBody() {
     List<Widget> screens = [
       HomeScreen(),
-      Center(child: Text("Search", style: TextStyle(fontSize: 20, color: black),),),
+      SearchScreen(),
       Center(child: Text("Reels", style: TextStyle(fontSize: 20, color: black),),),
       Center(child: Text("Shop", style: TextStyle(fontSize: 20, color: black),),),
       Center(child: Text("Profile", style: TextStyle(fontSize: 20, color: black),),),
